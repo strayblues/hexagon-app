@@ -13,16 +13,11 @@ class TextField extends Component {
       <Container>
         <Instructions />
         <InputContainer>
-          <StyledInput placeholder="input..." label="1" />
-          <StyledInput placeholder="input..." label="2" />
-          <StyledInput placeholder="input..." label="3" />
-          <StyledInput placeholder="input..." label="4" />
-          <StyledInput placeholder="input..." label="5" />
-          <StyledInput placeholder="input..." label="6" />
-          <StyledInput placeholder="input..." label="7" />
-          <StyledInput placeholder="input..." label="8" />
-          <StyledInput placeholder="input..." label="9" />
-          <StyledInput placeholder="input..." label="10" />
+          {/* To store these inputs as arrays we'll need a database
+            that supports arrays, like Mongo */}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((object, i) => (
+            <StyledInput placeholder="input..." label={i + 1} />
+          ))}
         </InputContainer>
         <StyledButton>Send</StyledButton>
       </Container>
