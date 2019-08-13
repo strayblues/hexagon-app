@@ -1,23 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import "./App.css";
+
+// Components
+// components
+import Grid from "./components/Grid";
+import TextField from "./components/TextField";
+// import Footer from './components/Footer';
 
 const App = () => {
   return (
     <div className="App">
       <Container>
+        <Header />
         <Content>
-          <Header />
-          <Sidebar />
-          <Grid>
-            <svg height="210" width="500">
-              <polygon
-                points="150,10 100,40 100,90 150,120 200,90 200,40"
-                style="fill:lime;stroke:purple;stroke-width:1"
-              />
-              Sorry, your browser does not support inline SVG.
-            </svg>
-          </Grid>
+          <GridContainer>
+            <h1>Here's a drawing</h1>
+            <Grid />
+          </GridContainer>
+          <TextFieldContainer>
+            <h1>Instructions to the user</h1>
+            <TextField>Input</TextField>
+          </TextFieldContainer>
         </Content>
         <Footer />
       </Container>
@@ -35,9 +39,19 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Content = styled.div`
-  flex: 1 0 auto;
+  display: flex;
+  margin-top: 5em;
+  align-self: center;
 `;
 const Header = styled.div``;
-const Sidebar = styled.div``;
-const Grid = styled.div``;
+
+const ElementContainer = styled.div`
+  margin: 5em;
+  background-color: white;
+  width: 28em;
+  height: 22em;
+`;
+const TextFieldContainer = styled(ElementContainer)``;
+const GridContainer = styled(ElementContainer)``;
+
 const Footer = styled.div``;
