@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import "./App.css";
 
-// Components
 // components
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Grid from "./components/Grid";
 import TextField from "./components/TextField";
-// import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -40,18 +40,13 @@ const Container = styled.div`
 `;
 const Content = styled.div`
   display: flex;
-  margin-top: 5em;
   align-self: center;
 `;
-const Header = styled.div``;
-
 const ElementContainer = styled.div`
-  margin: 5em;
+  margin: 2em;
   background-color: white;
-  width: 28em;
-  height: 22em;
+  width: 45vw;
+  max-height: 80vh;
 `;
 const TextFieldContainer = styled(ElementContainer)``;
 const GridContainer = styled(ElementContainer)``;
-
-const Footer = styled.div``;

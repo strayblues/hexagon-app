@@ -18,18 +18,19 @@ const Container = styled.div`
 `;
 
 const Label = styled.div`
-  font-weight: 700;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-top: 16px;
+  margin-bottom: 6px;
 `;
 
-const StyledInput = styled.input`
+const StyledInput = styled.textarea`
   align-self: center;
   width: 90%;
-  height: 40px;
-  border: 1px solid #444;
+  height: 120px;
+  border: 3px solid #cccccc;
+  font-family: Tahoma, sans-serif;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 6px;
   color: #444;
-  font-size: 16px;
+  font-size: 18px;
 `;
