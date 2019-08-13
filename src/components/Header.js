@@ -13,7 +13,7 @@ export default Header;
 
 const Container = styled.div`
   width: 100%;
-  min-height: 200px;
+  min-height: 100px;
   border-bottom: 1px solid #000;
   background: #fafafa;
   display: flex;

@@ -23,8 +23,8 @@ class TextField extends Component {
           <StyledInput placeholder="input..." label="8" />
           <StyledInput placeholder="input..." label="9" />
           <StyledInput placeholder="input..." label="10" />
-          <StyledButton>Send</StyledButton>
         </InputContainer>
+        <StyledButton>Send</StyledButton>
       </Container>
     );
   }
@@ -41,6 +41,4 @@ const StyledButton = styled(Button)`
 const StyledInput = styled(Input)`
   background-color: #f5f5f5;
 `;
-const InputContainer = styled.div`
-  overflow: scroll;
-`;
+const InputContainer = styled.div``;

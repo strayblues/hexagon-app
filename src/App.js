@@ -1,30 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 import "./App.css";
 
 // components
+import Home from "./components/pages/Home";
+import Output from "./components/pages/Output";
+import Instructions from "./components/pages/Instructions";
+import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Grid from "./components/Grid";
-import TextField from "./components/TextField";
 
 const App = () => {
   return (
     <div className="App">
-      <Container>
-        <Header />
-        <Content>
-          <GridContainer>
-            <h1>Here's a drawing</h1>
-            <Grid />
-          </GridContainer>
-          <TextFieldContainer>
-            <h1>Instructions to the user</h1>
-            <TextField>Input</TextField>
-          </TextFieldContainer>
-        </Content>
-        <Footer />
-      </Container>
+      <Router>
+        <Container>
+          <Navbar />
+          <Header />
+          <Content>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/input" exact component={Home} />
+              <Route path="/output" exact component={Output} />
+              <Route path="/instructions" exact component={Instructions} />
+            </Switch>
+          </Content>
+          <Footer />
+        </Container>
+      </Router>
     </div>
   );
 };
@@ -42,11 +46,3 @@ const Content = styled.div`
   display: flex;
   align-self: center;
 `;
-const ElementContainer = styled.div`
-  margin: 2em;
-  background-color: white;
-  width: 45vw;
-  max-height: 80vh;
-`;
-const TextFieldContainer = styled(ElementContainer)``;
-const GridContainer = styled(ElementContainer)``;
