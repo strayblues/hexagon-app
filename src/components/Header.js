@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Header = () => {
   return (
     <Container>
-      <Title>Hexagon App by ONLP Lab</Title>
+      <Title>Hexagon App</Title>
     </Container>
   );
 };

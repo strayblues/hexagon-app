@@ -34,7 +34,6 @@ export default ColorPalette;
 const Container = styled.div`
   align-self: center;
   height: 60px;
-  background: #bdbdbd;
   color: #fff;
   display: flex;
   align-items: center;
@@ -51,6 +50,7 @@ const Color = styled.button`
   border-radius: 50%;
   border: 1px solid black;
   background: pink;
+  outline: none;
   transition: all 300ms;
 
   &:hover {

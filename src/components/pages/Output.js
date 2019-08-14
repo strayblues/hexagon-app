@@ -5,18 +5,19 @@ import styled from "styled-components";
 // import ElementContainer from "../common/ElementContainer";
 import Grid from "../Grid";
 import ColorPalette from "../common/ColorPalette";
+import Button from "../common/Button";
 
 const Output = () => {
   return (
     <>
       <StepsContainer>
-        <h1>Instructions to the user for drawing</h1>
+        <h1>Task</h1>
         <Step>Show next line of Instructions when user done</Step>
       </StepsContainer>
-
       <GridContainer>
         <ColorPalette />
         <Grid />
+        <StyledButton>Done</StyledButton>
       </GridContainer>
     </>
   );
@@ -34,4 +35,11 @@ const Step = styled.div``;
 const StepsContainer = styled(ElementContainer)``;
 const GridContainer = styled(ElementContainer)`
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+`;
+const StyledButton = styled(Button)`
+  width: 25%;
+  align-self: flex-end;
+  background-color: lightseagreen;
 `;

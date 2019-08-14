@@ -11,11 +11,10 @@ const Home = () => {
   return (
     <>
       <GridContainer>
-        <h1>Here's a drawing</h1>
+        <h1>Task</h1>
         <Grid />
       </GridContainer>
       <TextFieldContainer>
-        <h1>Instructions to the user</h1>
         <InputContainer>
           <TextField />
         </InputContainer>
@@ -27,7 +26,7 @@ const Home = () => {
 
 export default Home;
 const ElementContainer = styled.div`
-  margin: 2em;
+  margin: 1em 2em;
   background-color: white;
   width: 45vw;
   max-height: 65vh;
@@ -47,7 +46,7 @@ const InputContainer = styled(ElementContainer)`
 const GridContainer = styled(ElementContainer)``;
 const StyledButton = styled(Button)`
   width: 25%;
-  /* align-self: right; */
+  align-self: left;
   background-color: lightseagreen;
 `;
 const TextFieldContainer = styled.div`

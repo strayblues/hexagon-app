@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Container>
       <Divider />
-      <Info>Hexagon App</Info>
+      <Info>© ONLP Lab 2019</Info>
     </Container>
   );
 };
@@ -14,7 +14,7 @@ export default Footer;
 
 const Container = styled.div`
   width: 500px;
-  margin: 0 auto;
+  margin: 1em auto;
   display: flex;
   align-items: center;
   flex-direction: column;
