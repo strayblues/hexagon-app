@@ -32,4 +32,6 @@ const ElementContainer = styled.div`
 `;
 const Step = styled.div``;
 const StepsContainer = styled(ElementContainer)``;
-const GridContainer = styled(ElementContainer)``;
+const GridContainer = styled(ElementContainer)`
+  cursor: pointer;
+`;
