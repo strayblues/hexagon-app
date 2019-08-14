@@ -4,6 +4,7 @@ import styled from "styled-components";
 // Components
 // import ElementContainer from "../common/ElementContainer";
 import Grid from "../Grid";
+import ColorPalette from "../common/ColorPalette";
 
 const Output = () => {
   return (
@@ -14,7 +15,7 @@ const Output = () => {
       </StepsContainer>
 
       <GridContainer>
-        <h1>Color the hexagons as instructed</h1>
+        <ColorPalette />
         <Grid />
       </GridContainer>
     </>
