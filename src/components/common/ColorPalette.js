@@ -1,20 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const ColorPalette = () => (
-  <Container>
-    {["red", "green", "yellow", "blue"].map((a, i) => (
-      <Color background={i} />
-    ))}
-  </Container>
-);
+const ColorPalette = () => {
+  return (
+    <Container>
+      {["red", "green", "yellow", "blue"].map((a, i) => (
+        <Color background={i} />
+      ))}
+    </Container>
+  );
+};
 
 export default ColorPalette;
 
 const Container = styled.div`
   align-self: center;
   height: 60px;
-  /* background: gray; */
+  background: #bdbdbd;
   color: #fff;
   display: flex;
   align-items: center;

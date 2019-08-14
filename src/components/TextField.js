@@ -13,8 +13,6 @@ class TextField extends Component {
         <Container>
           <Instructions />
           <InputContainer>
-            {/* To store these inputs as arrays we'll need a database
-            that supports arrays, like Mongo */}
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((object, i) => (
               <StyledInput placeholder="input..." label={i + 1} />
             ))}
