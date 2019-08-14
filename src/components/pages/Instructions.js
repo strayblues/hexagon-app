@@ -1,12 +1,14 @@
 import React from "react";
-import PageTitle from "../common/PageTitle";
+import styled from "styled-components";
 
 const Instructions = () => {
   return (
     <>
-      <PageTitle title="Instructions" />
+      <Container title="Instructions" />
     </>
   );
 };
 
 export default Instructions;
+
+const Container = styled.div``;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Button from "./common/Button";
 import Input from "./common/Input";
 
 class TextField extends Component {
@@ -10,17 +9,18 @@ class TextField extends Component {
 
   render() {
     return (
-      <Container>
-        <Instructions />
-        <InputContainer>
-          {/* To store these inputs as arrays we'll need a database
+      <>
+        <Container>
+          <Instructions />
+          <InputContainer>
+            {/* To store these inputs as arrays we'll need a database
             that supports arrays, like Mongo */}
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((object, i) => (
-            <StyledInput placeholder="input..." label={i + 1} />
-          ))}
-        </InputContainer>
-        <StyledButton>Send</StyledButton>
-      </Container>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((object, i) => (
+              <StyledInput placeholder="input..." label={i + 1} />
+            ))}
+          </InputContainer>
+        </Container>
+      </>
     );
   }
 }
@@ -29,10 +29,7 @@ export default TextField;
 
 const Container = styled.div``;
 const Instructions = styled.div``;
-const StyledButton = styled(Button)`
-  background-color: lightseagreen;
-  margin: 1.33em;
-`;
+
 const StyledInput = styled(Input)`
   background-color: #f5f5f5;
 `;

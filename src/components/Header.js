@@ -21,10 +21,10 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 24px;
 `;
 
 const Title = styled.div`
-  font-size: 40px;
+  font-size: 36px;
   color: #444;
 `;
