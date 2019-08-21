@@ -4,7 +4,10 @@ import styled from "styled-components";
 class ColorPalette extends Component {
   constructor(props) {
     super(props);
-    this.state = { isToggleOn: true };
+    this.state = {
+      color: "pink",
+      isToggleOn: true
+    };
 
     this.handleClick = this.handleClick.bind(this);
   }
