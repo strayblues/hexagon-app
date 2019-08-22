@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
+import taskService from "../../services/taskService";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
@@ -7,21 +8,33 @@ import Grid from "../Grid";
 import ColorPalette from "../common/ColorPalette";
 import Button from "../common/Button";
 
-const Output = () => {
-  return (
-    <>
-      <StepsContainer>
-        <h1>Task</h1>
-        <Step>Show next line of Instructions when user done</Step>
-      </StepsContainer>
-      <GridContainer>
-        <ColorPalette />
-        <Grid />
-        <StyledButton>Done</StyledButton>
-      </GridContainer>
-    </>
-  );
-};
+class Output extends Component {
+  state = {};
+
+  componentDidMount() {
+    const taskToVerify = taskService.getCompletedTask();
+    this.setState({ taskToVerify }); // "verify" page
+  }
+  handleSubmitVerificaion = () => {
+    // completedTaskWithVerification.verification.push(new verification)
+    // taskService.save({ completedTaskWithVerification });
+  };
+  render() {
+    return (
+      <>
+        <StepsContainer>
+          <h1>Task</h1>
+          <Step>Show next line of Instructions when user done</Step>
+        </StepsContainer>
+        <GridContainer>
+          <ColorPalette />
+          <Grid />
+          <StyledButton>Done</StyledButton>
+        </GridContainer>
+      </>
+    );
+  }
+}
 
 export default Output;
 

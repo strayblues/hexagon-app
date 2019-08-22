@@ -1,28 +1,42 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import Button from "../common/Button";
+import taskService from "../../services/taskService";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
 import Grid from "../Grid";
 import TextField from "../TextField";
 
-const Home = () => {
-  return (
-    <>
-      <GridContainer>
-        <h1>Task</h1>
-        <Grid />
-      </GridContainer>
-      <TextFieldContainer>
-        <InputContainer>
-          <TextField />
-        </InputContainer>
-        <StyledButton>Send</StyledButton>
-      </TextFieldContainer>
-    </>
-  );
-};
+class Home extends Component {
+  state = {};
+
+  componentDidMount() {
+    const task = taskService.getEmpty();
+    this.setState({ task }); //inputs
+  }
+  handleSubmitDesc = () => {
+    // get values from 'inputs'
+    // put the values in state, inside the empty 'inputs' array
+    taskService.save({ ...this.state });
+  };
+  render() {
+    return (
+      <>
+        <GridContainer>
+          <h1>Task</h1>
+          <Grid />
+        </GridContainer>
+        <TextFieldContainer>
+          <InputContainer>
+            <TextField />
+          </InputContainer>
+          <StyledButton onClick={this.handleSubmitDesc}>Send</StyledButton>
+        </TextFieldContainer>
+      </>
+    );
+  }
+}
 
 export default Home;
 const ElementContainer = styled.div`
