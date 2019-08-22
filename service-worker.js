@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/hexagon-app/precache-manifest.d4be5d9cbc471a3de7fe67706e321f9c.js"
+  "/hexagon-app/precache-manifest.42247518f1df0d6dbff8a38168cb5fff.js"
 );
 
 self.addEventListener('message', (event) => {
