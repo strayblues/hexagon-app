@@ -8,7 +8,7 @@ import Grid from "../Grid";
 import ColorPalette from "../common/ColorPalette";
 import Button from "../common/Button";
 
-class Output extends Component {
+class Align extends Component {
   state = {};
 
   componentDidMount() {
@@ -36,7 +36,7 @@ class Output extends Component {
   }
 }
 
-export default Output;
+export default Align;
 
 const ElementContainer = styled.div`
   margin: 2em;

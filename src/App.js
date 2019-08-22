@@ -5,8 +5,8 @@ import "./App.css";
 
 // components
 import Home from "./components/pages/Home";
-import Output from "./components/pages/Output";
-import Instructions from "./components/pages/Instructions";
+import Align from "./components/pages/Align";
+import Verify from "./components/pages/Verify";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -21,9 +21,9 @@ const App = () => {
           <Content>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/input" exact component={Home} />
-              <Route path="/output" exact component={Output} />
-              <Route path="/instructions" exact component={Instructions} />
+              <Route path="/describe" exact component={Home} />
+              <Route path="/align" exact component={Align} />
+              <Route path="/verify" exact component={Verify} />
             </Switch>
           </Content>
           <Footer />

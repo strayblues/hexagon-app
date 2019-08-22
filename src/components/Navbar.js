@@ -11,10 +11,13 @@ class Navbar extends Component {
             <MenuItemLink to="/instructions">Instructions</MenuItemLink>
           </MenuItem> */}
           <MenuItem>
-            <MenuItemLink to="/input">Describe</MenuItemLink>
+            <MenuItemLink to="/describe">Describe</MenuItemLink>
           </MenuItem>
           <MenuItem>
-            <MenuItemLink to="/output">Align</MenuItemLink>
+            <MenuItemLink to="/align">Align</MenuItemLink>
+          </MenuItem>
+          <MenuItem>
+            <MenuItemLink to="/verify">Verify</MenuItemLink>
           </MenuItem>
         </MenuContainer>
       </Container>
