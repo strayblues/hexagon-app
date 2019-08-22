@@ -21,12 +21,16 @@ class ColorPalette extends Component {
   render() {
     return (
       <Container>
+        <Yellow onClick={this.handleClick} />
+        <Green onClick={this.handleClick} />
         <Red onClick={this.handleClick}>
           {this.state.isToggleOn ? "ON" : "OFF"}
         </Red>
-        <Yellow onClick={this.handleClick} />
-        <Green onClick={this.handleClick} />
+        <Black onClick={this.handleClick} />
         <Blue onClick={this.handleClick} />
+        <Violet onClick={this.handleClick} />
+        <Orange onClick={this.handleClick} />
+        <Clear onClick={this.handleClick} />
       </Container>
     );
   }
@@ -71,4 +75,17 @@ const Green = styled(Color)`
 `;
 const Blue = styled(Color)`
   background: dodgerblue;
+`;
+const Violet = styled(Color)`
+  background: violet;
+`;
+const Black = styled(Color)`
+  background: black;
+`;
+const Orange = styled(Color)`
+  background: orange;
+`;
+const Clear = styled(Color)`
+  background: white;
+  border-radius: 0%;
 `;
