@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const HexagonGrid = () => {
+const HexagonEmptyBoard = () => {
   let hexagonStyle = {
     fill: "white",
     stroke: "black",
@@ -99,7 +99,7 @@ const HexagonGrid = () => {
   );
 };
 
-export default HexagonGrid;
+export default HexagonEmptyBoard;
 
 const Container = styled.div`
   margin-left: 2em;

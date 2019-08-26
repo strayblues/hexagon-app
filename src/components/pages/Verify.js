@@ -4,7 +4,7 @@ import taskService from "../../services/taskService";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
-import GridN from "../GridN";
+import NumberedBoard from "../NumberedBoard";
 import ColorPalette from "../common/ColorPalette";
 import Button from "../common/Button";
 
@@ -33,11 +33,11 @@ class Verify extends Component {
             <NextButton>Next</NextButton>
           </Step>
         </StepsContainer>
-        <GridContainer>
+        <BoardContainer>
           <ColorPalette />
-          <GridN />
+          <NumberedBoard />
           {/* <DoneButton>Done</DoneButton> */}
-        </GridContainer>
+        </BoardContainer>
       </>
     );
   }
@@ -60,7 +60,7 @@ const StepElement = styled(ElementContainer)`
   padding: 0.5em;
   border-radius: 4px;
 `;
-const GridContainer = styled(ElementContainer)`
+const BoardContainer = styled(ElementContainer)`
   cursor: pointer;
   display: flex;
   flex-direction: column;

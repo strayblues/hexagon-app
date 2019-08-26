@@ -4,7 +4,7 @@ import taskService from "../../services/taskService";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
-import Grid from "../Grid";
+import EmptyBoard from "../EmptyBoard";
 import ColorPalette from "../common/ColorPalette";
 import Button from "../common/Button";
 
@@ -26,11 +26,11 @@ class Align extends Component {
           <h1>Task</h1>
           <Step>Show next line of Instructions when user done</Step>
         </StepsContainer>
-        <GridContainer>
+        <BoardContainer>
           <ColorPalette />
-          <Grid />
+          <EmptyBoard />
           <StyledButton>Done</StyledButton>
-        </GridContainer>
+        </BoardContainer>
       </>
     );
   }
@@ -46,7 +46,7 @@ const ElementContainer = styled.div`
 `;
 const Step = styled.div``;
 const StepsContainer = styled(ElementContainer)``;
-const GridContainer = styled(ElementContainer)`
+const BoardContainer = styled(ElementContainer)`
   cursor: pointer;
   display: flex;
   flex-direction: column;

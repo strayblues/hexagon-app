@@ -2,18 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 // Components
-import HexagonGridN from "./HexagonGridN";
+import HexagonEmptyBoard from "./HexagonEmptyBoard";
 
-const GridN = () => {
+const EmptyBoard = () => {
   return (
     <Container>
       <Instructions />
-      <HexagonGridN />
+      <HexagonEmptyBoard />
     </Container>
   );
 };
 
-export default GridN;
+export default EmptyBoard;
 
 const Container = styled.div``;
 const Instructions = styled.div``;

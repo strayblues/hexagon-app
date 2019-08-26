@@ -5,7 +5,7 @@ import taskService from "../../services/taskService";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
-import Grid from "../Grid";
+import Board from "../Board";
 import TextField from "../TextField";
 
 class Home extends Component {
@@ -23,10 +23,10 @@ class Home extends Component {
   render() {
     return (
       <>
-        <GridContainer>
+        <BoardContainer>
           <h1>Task</h1>
-          <Grid />
-        </GridContainer>
+          <Board />
+        </BoardContainer>
         <TextFieldContainer>
           <InputContainer>
             <TextField />
@@ -57,7 +57,7 @@ const InputContainer = styled(ElementContainer)`
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   }
 `;
-const GridContainer = styled(ElementContainer)``;
+const BoardContainer = styled(ElementContainer)``;
 const StyledButton = styled(Button)`
   width: 25%;
   align-self: left;
