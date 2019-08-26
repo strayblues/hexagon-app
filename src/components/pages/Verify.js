@@ -5,7 +5,7 @@ import taskService from "../../services/taskService";
 // Components
 // import ElementContainer from "../common/ElementContainer";
 import NumberedBoard from "../NumberedBoard";
-import ColorPalette from "../common/ColorPalette";
+import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
 
 class Verify extends Component {
@@ -34,7 +34,7 @@ class Verify extends Component {
           </Step>
         </StepsContainer>
         <BoardContainer>
-          <ColorPalette />
+          <ColorPicker />
           <NumberedBoard />
           {/* <DoneButton>Done</DoneButton> */}
         </BoardContainer>

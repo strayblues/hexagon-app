@@ -5,7 +5,7 @@ import taskService from "../../services/taskService";
 // Components
 // import ElementContainer from "../common/ElementContainer";
 import EmptyBoard from "../EmptyBoard";
-import ColorPalette from "../common/ColorPalette";
+import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
 
 class Align extends Component {
@@ -27,7 +27,7 @@ class Align extends Component {
           <Step>Show next line of Instructions when user done</Step>
         </StepsContainer>
         <BoardContainer>
-          <ColorPalette />
+          <ColorPicker />
           <EmptyBoard />
           <StyledButton>Done</StyledButton>
         </BoardContainer>

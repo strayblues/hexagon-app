@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-class ColorPalette extends Component {
+class ColorPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +36,7 @@ class ColorPalette extends Component {
   }
 }
 
-export default ColorPalette;
+export default ColorPicker;
 
 const Container = styled.div`
   align-self: center;
