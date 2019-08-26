@@ -5,7 +5,7 @@ import taskService from "../../services/taskService";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
-import Board from "../Board";
+import EmptyBoard from "../EmptyBoard";
 import TextField from "../TextField";
 
 class Home extends Component {
@@ -25,7 +25,7 @@ class Home extends Component {
       <>
         <BoardContainer>
           <h1>Task</h1>
-          <Board />
+          <EmptyBoard />
         </BoardContainer>
         <TextFieldContainer>
           <InputContainer>
