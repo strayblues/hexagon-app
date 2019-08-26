@@ -18,15 +18,27 @@ class ColorPicker extends Component {
   render() {
     return (
       <Container>
-        <Color color="gold" onClick={this.handleClick} />
-        <Color color="limegreen" onClick={this.handleClick} />
-        <Color color="crimson" onClick={this.handleClick} />
-        <Color color="black" onClick={this.handleClick} />
-        <Color color="dodgerblue" onClick={this.handleClick} />
-        <Color color="violet" onClick={this.handleClick} />
-        <Color color="orange" onClick={this.handleClick} />
-        <Clear color="white" onClick={this.handleClick} />
-        <CurrentColor color={this.state.currentColor} />
+        {[
+          "gold",
+          "limegreen",
+          "crimson",
+          "black",
+          "dodgerblue",
+          "violet",
+          "orange"
+        ].map(color => (
+          <Color
+            color={color}
+            selected={color === this.state.currentColor}
+            onClick={this.handleClick}
+          />
+        ))}
+        <Clear
+          color="white"
+          selected={this.state.currentColor === "white"}
+          onClick={this.handleClick}
+        />
+        {/* <CurrentColor color={this.state.currentColor} /> */}
       </Container>
     );
   }
@@ -54,15 +66,19 @@ const Color = styled.button`
   border-radius: 50%;
   border: 1px solid black;
   outline: none;
+  box-shadow: ${props =>
+    props.selected ? "0 5px 10px rgba(0, 0, 0, 0.8)" : ""};
   transition: all 300ms;
 
   &:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   }
 `;
 const Clear = styled(Color)`
   border-radius: 0%;
 `;
-const CurrentColor = styled(Color)`
-  border-radius: 0%;
-`;
+// const CurrentColor = styled(Color)`
+//   width: 1.5em;
+//   height: 1.5em;
+//   margin-left: 2em;
+// `;
