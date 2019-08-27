@@ -13,6 +13,9 @@ class HexagonEmptyBoard extends Component {
     };
   }
 
+  // The hexagon methods currently effect the entite board.
+  // They should only effect individual hexagons.
+
   markHexagon = e => {
     this.setState({
       hexagonStyle: {
@@ -33,13 +36,13 @@ class HexagonEmptyBoard extends Component {
     });
   };
 
-  // Also need to unmark on second click (toggle)
-  // TODO: stay fixed no regardless of mouseleave!
+  // TODO: need to unmark on second click (toggle)
+  // and stay fixed no regardless of mouseleave
   fixMarkHexagon = e => {
     this.setState({
       hexagonStyle: {
         fill: "white",
-        stroke: "black",
+        stroke: "blue",
         "stroke-width": "5"
       }
     });
