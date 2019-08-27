@@ -13,7 +13,6 @@ const HexagonNumberedBoard = () => {
       <svg viewBox="0 0 1350 770">
         <defs>
           <polygon
-            onClick={this.handleClick}
             id="hexagon"
             points="50,25 100,25 125,68 100,111 50,111 25,68"
             style={hexagonStyle}

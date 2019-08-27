@@ -16,7 +16,8 @@ class HexagonEmptyBoard extends Component {
   handleClick = e => {
     this.setState({
       hexagonStyle: {
-        fill: "red"
+        fill: "pink",
+        "stroke-width": "5"
       }
     });
   };
@@ -30,6 +31,7 @@ class HexagonEmptyBoard extends Component {
               id="hexagon"
               points="50,25 100,25 125,68 100,111 50,111 25,68"
               style={this.state.hexagonStyle}
+              onClick="handleClick"
             />
           </defs>
           {[0, 1, 2, 3, 4, 5, 6, 7].map(i => {
@@ -37,12 +39,10 @@ class HexagonEmptyBoard extends Component {
               return (
                 <>
                   <use
-                    onClick="handleClick"
                     xlinkHref="#hexagon"
                     transform={"translate(" + j * 75 + "," + i * 86 + ")"}
                   />
                   <use
-                    onClick="handleClick"
                     xlinkHref="#hexagon"
                     transform={
                       "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
