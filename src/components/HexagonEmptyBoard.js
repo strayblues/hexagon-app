@@ -21,38 +21,33 @@ class HexagonEmptyBoard extends Component {
   toggleMark = e => {
     if (this.state.isMouseOver && this.state.isSelected) {
       this.setState({
-        ...this.state,
         hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "5" },
         isSelected: false
       });
     } else if (this.state.isMouseOver && !this.state.isSelected) {
       this.setState({
-        ...this.state,
         hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "2" },
         isSelected: true
       });
     } else if (!this.state.isMouseOver && this.state.isSelected) {
       this.setState({
-        ...this.state,
         hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "5" },
         isSelected: false
       });
     } else if (!this.state.isMouseOver && !this.state.isSelected) {
       this.setState({
-        ...this.state,
         hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "2" },
-        isSelected: false
+        isSelected: true
       });
     }
   };
 
   trackMouseOver = e => {
-    debugger;
-    this.setState({ ...this.state, isMouseOver: true });
+    this.setState({ isMouseOver: true });
   };
 
   trackMouseLeave = e => {
-    this.setState({ ...this.state, isMouseOver: false });
+    this.setState({ isMouseOver: false });
   };
 
   render() {
