@@ -9,43 +9,50 @@ class HexagonEmptyBoard extends Component {
         fill: "none",
         stroke: "black",
         "stroke-width": "2"
-      }
+      },
+      isSelected: false,
+      isMouseOver: false
     };
   }
 
   // The hexagon methods currently effect the entite board.
   // They should only effect individual hexagons.
 
-  markHexagon = e => {
-    this.setState({
-      hexagonStyle: {
-        fill: "white",
-        stroke: "black",
-        "stroke-width": "4"
-      }
-    });
+  toggleMark = e => {
+    if (this.state.isMouseOver && this.state.isSelected) {
+      this.setState({
+        ...this.state,
+        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "5" },
+        isSelected: false
+      });
+    } else if (this.state.isMouseOver && !this.state.isSelected) {
+      this.setState({
+        ...this.state,
+        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "2" },
+        isSelected: true
+      });
+    } else if (!this.state.isMouseOver && this.state.isSelected) {
+      this.setState({
+        ...this.state,
+        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "5" },
+        isSelected: false
+      });
+    } else if (!this.state.isMouseOver && !this.state.isSelected) {
+      this.setState({
+        ...this.state,
+        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "2" },
+        isSelected: false
+      });
+    }
   };
 
-  unmarkHexagon = e => {
-    this.setState({
-      hexagonStyle: {
-        fill: "white",
-        stroke: "black",
-        "stroke-width": "2"
-      }
-    });
+  trackMouseOver = e => {
+    debugger;
+    this.setState({ ...this.state, isMouseOver: true });
   };
 
-  // TODO: need to unmark on second click (toggle)
-  // and stay fixed no regardless of mouseleave
-  fixMarkHexagon = e => {
-    this.setState({
-      hexagonStyle: {
-        fill: "white",
-        stroke: "blue",
-        "stroke-width": "5"
-      }
-    });
+  trackMouseLeave = e => {
+    this.setState({ ...this.state, isMouseOver: false });
   };
 
   render() {
@@ -66,18 +73,18 @@ class HexagonEmptyBoard extends Component {
                   <use
                     xlinkHref="#hexagon"
                     transform={"translate(" + j * 75 + "," + i * 86 + ")"}
-                    onClick={this.fixMarkHexagon}
-                    onMouseEnter={this.markHexagon}
-                    onMouseLeave={this.unmarkHexagon}
+                    onClick={this.toggleMark}
+                    onMouseEnter={this.trackMouseOver}
+                    onMouseLeave={this.trackMouseLeave}
                   />
                   <use
                     xlinkHref="#hexagon"
                     transform={
                       "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
                     }
-                    onClick={this.fixMarkHexagon}
-                    onMouseEnter={this.markHexagon}
-                    onMouseLeave={this.unmarkHexagon}
+                    onClick={this.toggleMark}
+                    onMouseEnter={this.trackMouseOver}
+                    onMouseLeave={this.trackMouseLeave}
                   />
                 </>
               );
