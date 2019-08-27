@@ -4,7 +4,7 @@ import styled from "styled-components";
 // Components
 import HexagonEmptyBoard from "./HexagonEmptyBoard";
 
-const EmptyBoard = () => {
+const EmptyBoard = props => {
   return (
     <Container>
       <Instructions />

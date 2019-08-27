@@ -4,9 +4,7 @@ import styled from "styled-components";
 class ColorPicker extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentColor: "pink"
-    };
+    this.state = {};
   }
 
   handleClick = e => {
@@ -38,7 +36,7 @@ class ColorPicker extends Component {
           selected={this.state.currentColor === "white"}
           onClick={this.handleClick}
         />
-        {/* <CurrentColor color={this.state.currentColor} /> */}
+        <CurrentColor color={this.state.currentColor} />
       </Container>
     );
   }
@@ -77,8 +75,8 @@ const Color = styled.button`
 const Clear = styled(Color)`
   border-radius: 0%;
 `;
-// const CurrentColor = styled(Color)`
-//   width: 1.5em;
-//   height: 1.5em;
-//   margin-left: 2em;
-// `;
+const CurrentColor = styled(Color)`
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 2em;
+`;

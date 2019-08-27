@@ -10,7 +10,9 @@ import Button from "../common/Button";
 
 class Align extends Component {
   state = {};
-
+  setColor(currentColor) {
+    this.setState(...currentColor);
+  }
   componentDidMount() {
     const taskToVerify = taskService.getCompletedTask();
     this.setState({ taskToVerify }); // "verify" page
@@ -27,8 +29,11 @@ class Align extends Component {
           <Step>Show next line of Instructions when user done</Step>
         </StepsContainer>
         <BoardContainer>
-          <ColorPicker />
-          <EmptyBoard />
+          <ColorPicker
+            currentColor={this.props.currentColor}
+            setColor={this.setColor}
+          />
+          <EmptyBoard currentColor={this.state.currentColor} />
           <StyledButton>Done</StyledButton>
         </BoardContainer>
       </>

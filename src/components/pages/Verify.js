@@ -9,7 +9,9 @@ import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
 
 class Verify extends Component {
-  state = {};
+  state = {
+    currentColor: "white"
+  };
 
   componentDidMount() {
     const taskToVerify = taskService.getCompletedTask();
