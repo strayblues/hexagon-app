@@ -6,17 +6,40 @@ class HexagonEmptyBoard extends Component {
     super(props);
     this.state = {
       hexagonStyle: {
-        fill: "white",
+        fill: "none",
         stroke: "black",
         "stroke-width": "2"
       }
     };
   }
 
-  handleClick = e => {
+  markHexagon = e => {
     this.setState({
       hexagonStyle: {
-        fill: "pink",
+        fill: "white",
+        stroke: "black",
+        "stroke-width": "4"
+      }
+    });
+  };
+
+  unmarkHexagon = e => {
+    this.setState({
+      hexagonStyle: {
+        fill: "white",
+        stroke: "black",
+        "stroke-width": "2"
+      }
+    });
+  };
+
+  // Also need to unmark on second click (toggle)
+  // TODO: stay fixed no regardless of mouseleave!
+  fixMarkHexagon = e => {
+    this.setState({
+      hexagonStyle: {
+        fill: "white",
+        stroke: "black",
         "stroke-width": "5"
       }
     });
@@ -31,7 +54,6 @@ class HexagonEmptyBoard extends Component {
               id="hexagon"
               points="50,25 100,25 125,68 100,111 50,111 25,68"
               style={this.state.hexagonStyle}
-              onClick="handleClick"
             />
           </defs>
           {[0, 1, 2, 3, 4, 5, 6, 7].map(i => {
@@ -41,12 +63,18 @@ class HexagonEmptyBoard extends Component {
                   <use
                     xlinkHref="#hexagon"
                     transform={"translate(" + j * 75 + "," + i * 86 + ")"}
+                    onClick={this.fixMarkHexagon}
+                    onMouseEnter={this.markHexagon}
+                    onMouseLeave={this.unmarkHexagon}
                   />
                   <use
                     xlinkHref="#hexagon"
                     transform={
                       "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
                     }
+                    onClick={this.fixMarkHexagon}
+                    onMouseEnter={this.markHexagon}
+                    onMouseLeave={this.unmarkHexagon}
                   />
                 </>
               );
