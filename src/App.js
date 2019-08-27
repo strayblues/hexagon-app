@@ -17,7 +17,7 @@ const App = () => {
       <Router>
         <Container>
           <Navbar />
-          <Header />
+          {/* <Header /> */}
           <Content>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -26,7 +26,7 @@ const App = () => {
               <Route path="/verify" exact component={Verify} />
             </Switch>
           </Content>
-          <Footer />
+          {/* <Footer /> */}
         </Container>
       </Router>
     </div>

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import taskService from "../../services/taskService";
 
+// Mock data
+import { jsonResponse } from "../../data/tasks.js";
+
 // Components
 // import ElementContainer from "../common/ElementContainer";
 import NumberedBoard from "../NumberedBoard";
@@ -51,7 +54,7 @@ const ElementContainer = styled.div`
   margin: 2em;
   background-color: white;
   width: 45vw;
-  max-height: 65vh;
+  max-height: 75vh;
 `;
 const Step = styled.div`
   display: flex;

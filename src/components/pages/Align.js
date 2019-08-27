@@ -46,18 +46,20 @@ export default Align;
 const ElementContainer = styled.div`
   margin: 2em;
   background-color: white;
-  width: 45vw;
-  max-height: 65vh;
 `;
 const Step = styled.div``;
-const StepsContainer = styled(ElementContainer)``;
+
 const BoardContainer = styled(ElementContainer)`
+  width: 50vw;
   cursor: pointer;
   display: flex;
   flex-direction: column;
 `;
+const StepsContainer = styled(ElementContainer)`
+  width: 32vw;
+`;
 const StyledButton = styled(Button)`
-  width: 25%;
-  align-self: flex-end;
-  background-color: lightseagreen;
+  width: 20%;
+  /* align-self: flex-end; */
+  /* background-color: lightseagreen; */
 `;

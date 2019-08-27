@@ -47,7 +47,7 @@ const ElementContainer = styled.div`
   overflow: scroll;
 `;
 const InputContainer = styled(ElementContainer)`
-  max-height: 53vh;
+  max-height: 75vh;
   border-radius: 4px;
   transition: all 300ms;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
