@@ -16,13 +16,16 @@ const App = () => {
     <div className="App">
       <Router>
         <Container>
-          <Navbar />
-          {/* <Header /> */}
+          {/* <Navbar />
+          <Header /> */}
           <Content>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/describe" exact component={Home} />
               <Route path="/align" exact component={Align} />
+
+              {/* Verify will be a separate app that gets its output
+              from previous user inputs */}
               <Route path="/verify" exact component={Verify} />
             </Switch>
           </Content>
