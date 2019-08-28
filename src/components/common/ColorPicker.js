@@ -23,7 +23,8 @@ class ColorPicker extends Component {
           "black",
           "dodgerblue",
           "violet",
-          "orange"
+          "orange",
+          "white"
         ].map(color => (
           <Color
             color={color}
@@ -31,11 +32,6 @@ class ColorPicker extends Component {
             onClick={this.handleClick}
           />
         ))}
-        <Clear
-          color="white"
-          selected={this.state.currentColor === "white"}
-          onClick={this.handleClick}
-        />
         <CurrentColor color={this.state.currentColor} />
       </Container>
     );
@@ -71,9 +67,6 @@ const Color = styled.button`
   &:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   }
-`;
-const Clear = styled(Color)`
-  border-radius: 0%;
 `;
 const CurrentColor = styled(Color)`
   width: 1.5em;
