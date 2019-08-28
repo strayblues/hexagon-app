@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Hexagon from './Hexagon';
 
 class HexagonEmptyBoard extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class HexagonEmptyBoard extends Component {
       hexagonStyle: {
         fill: "none",
         stroke: "black",
-        "stroke-width": "2"
+        "strokeWidth": "2"
       },
       isSelected: false,
       isMouseOver: false
@@ -21,22 +22,22 @@ class HexagonEmptyBoard extends Component {
   toggleMark = e => {
     if (this.state.isMouseOver && this.state.isSelected) {
       this.setState({
-        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "5" },
+        hexagonStyle: { ...this.state.hexagonStyle, "strokeWidth": "5" },
         isSelected: false
       });
     } else if (this.state.isMouseOver && !this.state.isSelected) {
       this.setState({
-        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "2" },
+        hexagonStyle: { ...this.state.hexagonStyle, "strokeWidth": "2" },
         isSelected: true
       });
     } else if (!this.state.isMouseOver && this.state.isSelected) {
       this.setState({
-        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "5" },
+        hexagonStyle: { ...this.state.hexagonStyle, "strokeWidth": "5" },
         isSelected: false
       });
     } else if (!this.state.isMouseOver && !this.state.isSelected) {
       this.setState({
-        hexagonStyle: { ...this.state.hexagonStyle, "stroke-width": "2" },
+        hexagonStyle: { ...this.state.hexagonStyle, "strokeWidth": "2" },
         isSelected: true
       });
     }
@@ -50,6 +51,7 @@ class HexagonEmptyBoard extends Component {
     this.setState({ isMouseOver: false });
   };
 
+ 
   render() {
     return (
       <Container>
@@ -65,23 +67,13 @@ class HexagonEmptyBoard extends Component {
             return [0, 2, 4, 6, 8, 10, 12, 14].map(j => {
               return (
                 <>
-                  <use
-                    xlinkHref="#hexagon"
-                    transform={"translate(" + j * 75 + "," + i * 86 + ")"}
-                    onClick={this.toggleMark}
-                    onMouseEnter={this.trackMouseOver}
-                    onMouseLeave={this.trackMouseLeave}
-                  />
-                  <use
-                    xlinkHref="#hexagon"
-                    transform={
-                      "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
-                    }
-                    onClick={this.toggleMark}
-                    onMouseEnter={this.trackMouseOver}
-                    onMouseLeave={this.trackMouseLeave}
-                  />
-                </>
+                <Hexagon 
+                  transform={"translate(" + j * 75 + "," + i * 86 + ")"}
+                />
+                <Hexagon 
+                  transform={"translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"}
+                />
+                </>          
               );
             });
           })}
@@ -91,6 +83,7 @@ class HexagonEmptyBoard extends Component {
     );
   }
 }
+
 
 export default HexagonEmptyBoard;
 
