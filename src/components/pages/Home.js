@@ -15,10 +15,16 @@ class Home extends Component {
     const task = taskService.getEmpty();
     this.setState({ task }); //inputs
   }
-  handleSubmitDesc = () => {
+  handleTaskDescription = () => {
     // get values from 'inputs'
     // put the values in state, inside the empty 'inputs' array
     taskService.save({ ...this.state });
+  };
+  handleSend = () => {
+    // Store user text and other required info
+    this.handleTaskDescription();
+    // Move to the "Align" task page
+    document.location.href = "align";
   };
   render() {
     return (
@@ -31,7 +37,7 @@ class Home extends Component {
           <InputContainer>
             <TextField />
           </InputContainer>
-          <StyledButton onClick={this.handleSubmitDesc}>Send</StyledButton>
+          <StyledButton onClick={this.handleSend}>Send</StyledButton>
         </TextFieldContainer>
       </>
     );
@@ -43,7 +49,7 @@ const ElementContainer = styled.div`
   margin: 1em 2em;
   background-color: white;
   width: 45vw;
-  max-height: 65vh;
+  max-height: 75vh;
   overflow: scroll;
 `;
 const InputContainer = styled(ElementContainer)`
