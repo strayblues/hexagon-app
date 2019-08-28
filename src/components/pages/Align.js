@@ -1,15 +1,52 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import taskService from "../../services/taskService";
+// import tasks from "../../data/tasks";
+
+// Mock data
+// import jsonResponse from "../../data/tasks";
 
 // Components
-// import ElementContainer from "../common/ElementContainer";
 import EmptyBoard from "../EmptyBoard";
 import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
 
+// fetch("../../data/tasks.json")
+//   .then(res => res.json())
+//   .then(data => {
+//     console.log("data:", data);
+//     console.log("data:", data);
+//   });
+
+const mockData = {
+  tasks: [
+    {
+      image: {
+        _id: "1",
+        src: "cat1.jpg"
+      },
+      inputs: ["Line 1", "Line 2", "Line 3", "Line 4"],
+      verifications: []
+    },
+    {
+      image: {
+        _id: "2",
+        src: "cat2.jpg"
+      },
+      inputs: { first: "Line 1", second: "Line 2", third: "Line 3" },
+      verifications: []
+    }
+  ]
+};
+
+const steps = mockData.tasks.inputs; // array
+// const currentStep = steps[0];
+
 class Align extends Component {
   state = {};
+  // advancSteps(steps) {
+  //   this.setState(...currentStep);
+  // }
   setColor(currentColor) {
     this.setState(...currentColor);
   }
@@ -21,21 +58,27 @@ class Align extends Component {
     // completedTaskWithVerification.verification.push(new verification)
     // taskService.save({ completedTaskWithVerification });
   };
+  showNext() {}
   render() {
     return (
       <>
         <StepsContainer>
           <h1>Align The Tiles</h1>
           <Step>
-            <StepElement>
-              Show next line when user clicks next. In the end the "Next" button
-              is replaced with "Done". Or "Done" is inactive a gray.
-            </StepElement>
+            {/* {[1, 2, 3].map(i => (
+              <StepElement>{i}</StepElement>
+            ))} */}
+            {[steps].map((step, i) => (
+              <StepElement>
+                {step}
+                {i}
+              </StepElement>
+            ))}
             <Separator></Separator>
             <p>Finished?</p>
-            <p>Click NEXT to get the next instructions:</p>
+            <p>Click NEXT to get more instructions:</p>
             <ButtonContainer>
-              <ActiveButton>Next</ActiveButton>
+              <ActiveButton onClick={this.showNext}>Next</ActiveButton>
               <InactiveButton>Done</InactiveButton>
             </ButtonContainer>
           </Step>

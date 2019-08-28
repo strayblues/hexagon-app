@@ -3,7 +3,7 @@ import styled from "styled-components";
 import taskService from "../../services/taskService";
 
 // Mock data
-import { jsonResponse } from "../../data/tasks.js";
+// import jsonResponse from "../../data/tasks.js";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
