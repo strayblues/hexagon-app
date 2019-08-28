@@ -61,7 +61,7 @@ const BoardContainer = styled(ElementContainer)``;
 const StyledButton = styled(Button)`
   width: 25%;
   align-self: left;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
 `;
 const TextFieldContainer = styled.div`
   display: flex;
