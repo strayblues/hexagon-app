@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e50ad31.chunk.css",
-    "main.js": "/static/js/main.b710f287.chunk.js",
-    "main.js.map": "/static/js/main.b710f287.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.d83d3e8b.chunk.js": "/static/js/2.d83d3e8b.chunk.js",
-    "static/js/2.d83d3e8b.chunk.js.map": "/static/js/2.d83d3e8b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.da6639ebe03fe309a10a1fc1b3268f75.js": "/precache-manifest.da6639ebe03fe309a10a1fc1b3268f75.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.9e50ad31.chunk.css.map": "/static/css/main.9e50ad31.chunk.css.map"
+    "main.css": "/hexagon-app/static/css/main.ceb10884.chunk.css",
+    "main.js": "/hexagon-app/static/js/main.7bdf32fa.chunk.js",
+    "main.js.map": "/hexagon-app/static/js/main.7bdf32fa.chunk.js.map",
+    "runtime~main.js": "/hexagon-app/static/js/runtime~main.486a813d.js",
+    "runtime~main.js.map": "/hexagon-app/static/js/runtime~main.486a813d.js.map",
+    "static/js/2.09ef1392.chunk.js": "/hexagon-app/static/js/2.09ef1392.chunk.js",
+    "static/js/2.09ef1392.chunk.js.map": "/hexagon-app/static/js/2.09ef1392.chunk.js.map",
+    "index.html": "/hexagon-app/index.html",
+    "precache-manifest.fffaecc94fe9aec57804dacdb911e0e3.js": "/hexagon-app/precache-manifest.fffaecc94fe9aec57804dacdb911e0e3.js",
+    "service-worker.js": "/hexagon-app/service-worker.js",
+    "static/css/main.ceb10884.chunk.css.map": "/hexagon-app/static/css/main.ceb10884.chunk.css.map"
   }
 }
