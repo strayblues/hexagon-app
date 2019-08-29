@@ -32,7 +32,11 @@
   }
 }
 
-/* polygon#hexagon:hover {
+#hexagon {
+  pointer-events: all;
+}
+
+/* polygon:hover {
   fill: red !important;
   stroke-width: 4;
 } */
