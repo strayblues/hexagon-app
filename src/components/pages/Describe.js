@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Button from "../common/Button";
 import taskService from "../../services/taskService";
+import { Link } from "react-router-dom";
 
 // Components
 // import ElementContainer from "../common/ElementContainer";
@@ -37,7 +38,10 @@ class Describe extends Component {
           <InputContainer>
             <TextField />
           </InputContainer>
-          <StyledButton onClick={this.handleSend}>Send</StyledButton>
+          <StyledButton onClick={this.handleSend}>
+            <RedirectLink to="/align">Send</RedirectLink>
+          </StyledButton>
+          {/* <StyledButton onClick={this.handleSend}>Send</StyledButton> */}
         </TextFieldContainer>
       </>
     );
@@ -69,6 +73,21 @@ const StyledButton = styled(Button)`
   width: 25%;
   align-self: left;
   /* background-color: lightseagreen; */
+`;
+const RedirectLink = styled(Link)`
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
+  padding: 20px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 300ms;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
 `;
 const TextFieldContainer = styled.div`
   display: flex;
