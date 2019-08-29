@@ -4,7 +4,7 @@ import styled from "styled-components";
 import "./App.css";
 
 // components
-import Home from "./components/pages/Home";
+import Describe from "./components/pages/Describe";
 import Align from "./components/pages/Align";
 import Verify from "./components/pages/Verify";
 import Navbar from "./components/Navbar";
@@ -20,8 +20,8 @@ const App = () => {
           {/* <Header /> */}
           <Content>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/describe" exact component={Home} />
+              <Route exact path="/" component={Describe} />
+              <Route path="/describe" exact component={Describe} />
               <Route path="/align" exact component={Align} />
               <Route path="/verify" exact component={Verify} />
             </Switch>

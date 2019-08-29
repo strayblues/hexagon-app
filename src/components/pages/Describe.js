@@ -1,29 +1,23 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Button from "../common/Button";
+import taskService from "../../services/taskService";
 
 // Components
-// import ElementContainer from "../common/ElementContainer";
 import EmptyBoard from "../EmptyBoard";
 import TextField from "../TextField";
 
-class Home extends Component {
+class Describe extends Component {
   state = {};
 
-  // componentDidMount() {
-  //   const task = taskService.getEmpty();
-  //   this.setState({ task }); //inputs
-
-  // handleTaskDescription = () => {
-  //   // get values from 'inputs'
-  //   // put the values in state, inside the empty 'inputs' array
-  //   taskService.save({ ...this.state });
-  // };
-  handleSend = () => {
-    // Store user text and other required info
-    this.handleTaskDescription();
-    // Move to the "Align" task page
-    document.location.href = "align";
+  componentDidMount() {
+    const task = taskService.getEmpty();
+    this.setState({ task }); //inputs
+  }
+  handleSubmitDesc = () => {
+    // get values from 'inputs'
+    // put the values in state, inside the empty 'inputs' array
+    taskService.save({ ...this.state });
   };
   render() {
     return (
@@ -36,19 +30,20 @@ class Home extends Component {
           <InputContainer>
             <TextField />
           </InputContainer>
-          <StyledButton onClick={this.handleSend}>Send</StyledButton>
+          <StyledButton onClick={this.handleSubmitDesc}>Send</StyledButton>
         </TextFieldContainer>
       </>
     );
   }
 }
 
-export default Home;
+export default Describe;
+
 const ElementContainer = styled.div`
   margin: 1em 2em;
   background-color: white;
   width: 45vw;
-  max-height: 75vh;
+  max-height: 65vh;
   overflow: scroll;
 `;
 const InputContainer = styled(ElementContainer)`
