@@ -5,7 +5,7 @@ class Hexagon extends Component {
     super(props);
     this.state = {
       hexagonStyle: {
-        fill: "none",
+        fill: "white",
         stroke: "black",
         strokeWidth: "2"
       },
@@ -33,11 +33,11 @@ class Hexagon extends Component {
         hexagonStyle: {
           ...this.state.hexagonStyle,
           strokeWidth: "4",
-          fill: "pink"
+          fill: this.props.currentColor
         },
         isSelected: true
       });
-      // If hexagon selected but not hovered, keep marked but decolor
+      // selected but not hovered -> keep marked but decolor
     } else if (!this.state.isMouseOver && this.state.isSelected) {
       this.setState({
         hexagonStyle: {
@@ -46,7 +46,7 @@ class Hexagon extends Component {
         },
         isSelected: false
       });
-      // If not hovered and not selected
+      // not hovered and not selected
     } else if (!this.state.isMouseOver && !this.state.isSelected) {
       this.setState({
         hexagonStyle: { ...this.state.hexagonStyle, strokeWidth: "2" },

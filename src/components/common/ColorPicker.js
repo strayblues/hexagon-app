@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Button from "./Button";
 
 class ColorPicker extends Component {
   constructor(props) {
@@ -8,9 +9,7 @@ class ColorPicker extends Component {
   }
 
   handleClick = e => {
-    this.setState({
-      currentColor: e.target.attributes.color.value
-    });
+    this.props.passColorToParent(e.target.attributes.color.value);
   };
 
   render() {
@@ -28,11 +27,11 @@ class ColorPicker extends Component {
         ].map(color => (
           <Color
             color={color}
-            selected={color === this.state.currentColor}
+            selected={color === this.props.currentColor}
             onClick={this.handleClick}
           />
         ))}
-        <CurrentColor color={this.state.currentColor} />
+        <CurrentColor color={this.props.currentColor} />
       </Container>
     );
   }

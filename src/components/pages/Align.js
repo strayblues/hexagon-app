@@ -1,22 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import taskService from "../../services/taskService";
-// import tasks from "../../data/tasks";
-
-// Mock data
-// import jsonResponse from "../../data/tasks";
 
 // Components
 import EmptyBoard from "../EmptyBoard";
 import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
-
-// fetch("../../data/tasks.json")
-//   .then(res => res.json())
-//   .then(data => {
-//     console.log("data:", data);
-//     console.log("data:", data);
-//   });
 
 const mockData = {
   tasks: [
@@ -25,7 +14,7 @@ const mockData = {
         _id: "1",
         src: "cat1.jpg"
       },
-      inputs: ["Line 1", "Line 2", "Line 3", "Line 4"],
+      description: ["Line 1", "Line 2", "Line 3", "Line 4"],
       verifications: []
     },
     {
@@ -33,26 +22,29 @@ const mockData = {
         _id: "2",
         src: "cat2.jpg"
       },
-      inputs: ["Line 1", "Line 2", "Line 3", "Line 4"],
+      description: ["Line 1", "Line 2", "Line 3", "Line 4"],
       verifications: []
     }
   ]
 };
 
-const steps = mockData.tasks[0].inputs; // array
-const currentStep = steps[0];
+const steps = mockData.tasks[0].description;
+// const currentStep = steps[i];
 
 class Align extends Component {
   state = {
     taskIndex: 0,
-    stepIndex: 0
+    stepIndex: 0,
+    currentColor: "white"
   };
+
   // advancSteps(steps) {
   //   this.setState(...currentStep);
   // }
-  setColor(currentColor) {
-    this.setState(...currentColor);
-  }
+
+  setColor = newColor => {
+    this.setState({ currentColor: newColor });
+  };
   componentDidMount() {
     const taskToVerify = taskService.getCompletedTask();
     this.setState({ taskToVerify }); // "verify" page
@@ -85,10 +77,12 @@ class Align extends Component {
         </StepsContainer>
         <BoardContainer>
           <ColorPicker
-            currentColor={this.props.currentColor}
-            setColor={this.setColor}
+            passColorToParent={this.setColor}
+            currentColor={this.state.currentColor}
           />
-          <EmptyBoard currentColor={this.state.currentColor} />
+          <EmptyBoard
+            currentColor={this.state.currentColor} // Pass color to Board
+          />
         </BoardContainer>
       </>
     );
