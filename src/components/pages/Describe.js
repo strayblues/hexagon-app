@@ -32,7 +32,7 @@ class Describe extends Component {
       <>
         <BoardContainer>
           <h2>Write instructions for painting the tiles</h2>
-          <EmptyBoard />
+          <EmptyBoard currentColor="white" />
         </BoardContainer>
         <TextFieldContainer>
           <InputContainer>

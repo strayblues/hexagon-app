@@ -65,28 +65,21 @@ class Hexagon extends Component {
 
   render() {
     return (
-      <>
+      <g
+        transform={this.props.transform}
+        onMouseEnter={this.trackMouseOver}
+        onMouseLeave={this.trackMouseLeave}
+        onClick={this.toggleMark}
+      >
         <polygon
           id="hexagon"
           points="50,25 100,25 125,68 100,111 50,111 25,68"
           style={this.state.hexagonStyle}
-          transform={this.props.transform}
-          onClick={this.toggleMark}
-          onMouseEnter={this.trackMouseOver}
-          onMouseLeave={this.trackMouseLeave}
         />
-
-        {/* <text
-          transform={this.props.transform}
-          text-anchor="middle"
-          x="74"
-          y="85"
-          fill="black"
-          font-size="40"
-        >
-          4
-        </text> */}
-      </>
+        <text text-anchor="middle" x="74" y="85" fill="black" font-size="40">
+          {this.props.number}
+        </text>
+      </g>
     );
   }
 }

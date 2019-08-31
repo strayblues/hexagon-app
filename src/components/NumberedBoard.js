@@ -1,51 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
+import Hexagon from "./common/Hexagon";
 
-const NumberedBoard = () => {
-  let hexagonStyle = {
-    fill: "white",
-    stroke: "black",
-    "stroke-width": "2"
-  };
+class EmptyBoard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-  return (
-    <Container>
-      <svg viewBox="0 0 1350 770">
-        <defs>
-          <polygon
-            id="hexagon"
-            points="50,25 100,25 125,68 100,111 50,111 25,68"
-            style={hexagonStyle}
-          />
-          <text x="32" y="50" text-anchor="middle" fill="white" font-size="30">
-            X
-          </text>
-        </defs>
-        {[0, 1, 2, 3, 4, 5, 6, 7].map(i => {
-          return [0, 2, 4, 6, 8, 10, 12, 14].map(j => {
-            return (
-              <>
-                <use
-                  xlinkHref="#hexagon"
-                  transform={"translate(" + j * 75 + "," + i * 86 + ")"}
-                />
-                <use
-                  xlinkHref="#hexagon"
-                  transform={
-                    "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
-                  }
-                />
-              </>
-            );
-          });
-        })}
-        Sorry, your browser does not support inline SVG.
-      </svg>
-    </Container>
-  );
-};
+  render() {
+    return (
+      <Container>
+        <svg viewBox="0 0 1350 950">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
+            return [0, 2, 4, 6, 8, 10, 12, 14].map(j => {
+              return (
+                <>
+                  <Hexagon
+                    number={10 * j + i + 1}
+                    currentColor={this.props.currentColor}
+                    transform={"translate(" + j * 75 + "," + i * 86 + ")"}
+                  />
+                  <Hexagon
+                    number={10 * j + i + 11}
+                    currentColor={this.props.currentColor}
+                    transform={
+                      "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
+                    }
+                  />
+                </>
+              );
+            });
+          })}
+        </svg>
+      </Container>
+    );
+  }
+}
 
-export default NumberedBoard;
+export default EmptyBoard;
 
 const Container = styled.div`
   margin-left: 2em;

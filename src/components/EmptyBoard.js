@@ -17,10 +17,12 @@ class EmptyBoard extends Component {
               return (
                 <>
                   <Hexagon
+                    number=""
                     currentColor={this.props.currentColor}
                     transform={"translate(" + j * 75 + "," + i * 86 + ")"}
                   />
                   <Hexagon
+                    number=""
                     currentColor={this.props.currentColor}
                     transform={
                       "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"

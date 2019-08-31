@@ -3,7 +3,7 @@ import styled from "styled-components";
 import taskService from "../../services/taskService";
 
 // Components
-import EmptyBoard from "../EmptyBoard";
+import NumberedBoard from "../NumberedBoard";
 import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
 
@@ -80,7 +80,7 @@ class Align extends Component {
             passColorToParent={this.setColor}
             currentColor={this.state.currentColor}
           />
-          <EmptyBoard
+          <NumberedBoard
             currentColor={this.state.currentColor} // Pass color to Board
           />
         </BoardContainer>
