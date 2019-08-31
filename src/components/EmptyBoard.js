@@ -11,8 +11,8 @@ class EmptyBoard extends Component {
   render() {
     return (
       <Container>
-        <svg viewBox="0 0 1350 770">
-          {[0, 1, 2, 3, 4, 5, 6, 7].map(i => {
+        <svg viewBox="0 0 1350 950">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
             return [0, 2, 4, 6, 8, 10, 12, 14].map(j => {
               return (
                 <>
@@ -40,6 +40,4 @@ export default EmptyBoard;
 
 const Container = styled.div`
   margin-left: 2em;
-  min-width: 0;
-  min-height: 0;
 `;

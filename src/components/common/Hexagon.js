@@ -23,7 +23,7 @@ class Hexagon extends Component {
         hexagonStyle: {
           ...this.state.hexagonStyle,
           strokeWidth: "5",
-          fill: "white"
+          fill: this.props.currentColor
         },
         isSelected: false
       });
@@ -32,7 +32,7 @@ class Hexagon extends Component {
       this.setState({
         hexagonStyle: {
           ...this.state.hexagonStyle,
-          strokeWidth: "4",
+          strokeWidth: "5",
           fill: this.props.currentColor
         },
         isSelected: true
@@ -65,15 +65,28 @@ class Hexagon extends Component {
 
   render() {
     return (
-      <polygon
-        id="hexagon"
-        points="50,25 100,25 125,68 100,111 50,111 25,68"
-        style={this.state.hexagonStyle}
-        transform={this.props.transform}
-        onClick={this.toggleMark}
-        onMouseEnter={this.trackMouseOver}
-        onMouseLeave={this.trackMouseLeave}
-      />
+      <>
+        <polygon
+          id="hexagon"
+          points="50,25 100,25 125,68 100,111 50,111 25,68"
+          style={this.state.hexagonStyle}
+          transform={this.props.transform}
+          onClick={this.toggleMark}
+          onMouseEnter={this.trackMouseOver}
+          onMouseLeave={this.trackMouseLeave}
+        />
+
+        {/* <text
+          transform={this.props.transform}
+          text-anchor="middle"
+          x="74"
+          y="85"
+          fill="black"
+          font-size="40"
+        >
+          4
+        </text> */}
+      </>
     );
   }
 }

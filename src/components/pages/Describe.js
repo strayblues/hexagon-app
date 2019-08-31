@@ -31,7 +31,7 @@ class Describe extends Component {
     return (
       <>
         <BoardContainer>
-          <h1>Task</h1>
+          <h2>Write instructions for painting the tiles</h2>
           <EmptyBoard />
         </BoardContainer>
         <TextFieldContainer>
@@ -41,7 +41,6 @@ class Describe extends Component {
           <StyledButton onClick={this.handleSend}>
             <RedirectLink to="/align">Send</RedirectLink>
           </StyledButton>
-          {/* <StyledButton onClick={this.handleSend}>Send</StyledButton> */}
         </TextFieldContainer>
       </>
     );
@@ -72,10 +71,9 @@ const BoardContainer = styled(ElementContainer)``;
 const StyledButton = styled(Button)`
   width: 25%;
   align-self: left;
-  /* background-color: lightseagreen; */
 `;
 const RedirectLink = styled(Link)`
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
   padding: 20px 10px;
   border-radius: 4px;
   text-decoration: none;
@@ -88,6 +86,7 @@ box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
   &:link,
   &:active {
     text-decoration: none;
+  }
 `;
 const TextFieldContainer = styled.div`
   display: flex;
