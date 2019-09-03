@@ -16,6 +16,9 @@ class Navbar extends Component {
           <MenuItem>
             <MenuItemLink to="/align">Align</MenuItemLink>
           </MenuItem>
+          <MenuItem>
+            <MenuItemLink to="/align-done">Done</MenuItemLink>
+          </MenuItem>
           {/* <MenuItem>
             <MenuItemLink to="/verify">Verify</MenuItemLink>
           </MenuItem> */}

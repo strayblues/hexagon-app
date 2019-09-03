@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import taskService from "../../services/taskService";
+import { Link } from "react-router-dom";
 
 // Components
 import NumberedBoard from "../NumberedBoard";
@@ -86,13 +87,14 @@ class Align extends Component {
                 Next
               </NextButton>
               <DoneButton
+                onClick={this.handleDone}
                 className={
                   this.state.taskDisplayCompleted
                     ? "active-btn"
                     : "inactive-btn"
                 }
               >
-                Done
+                <RedirectLink to="/align-done">Send</RedirectLink>
               </DoneButton>
             </ButtonContainer>
           </Step>
@@ -113,6 +115,22 @@ class Align extends Component {
 
 export default Align;
 
+const RedirectLink = styled(Link)`
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
+  padding: 20px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 300ms;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
 const ElementContainer = styled.div`
   margin: 2em;
   background-color: white;

@@ -6,6 +6,7 @@ import "./App.css";
 // components
 import Describe from "./components/pages/Describe";
 import Align from "./components/pages/Align";
+import AlignDone from "./components/pages/AlignDone";
 import Verify from "./components/pages/Verify";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -23,6 +24,7 @@ const App = () => {
               <Route exact path="/" component={Describe} />
               <Route path="/describe" exact component={Describe} />
               <Route path="/align" exact component={Align} />
+              <Route path="/align-done" exact component={AlignDone} />
               <Route path="/verify" exact component={Verify} />
             </Switch>
           </Content>
