@@ -7,40 +7,30 @@ import NumberedBoard from "../NumberedBoard";
 import ColorPicker from "../common/ColorPicker";
 import Button from "../common/Button";
 
-const mockData = {
-  tasks: [
-    {
-      image: {
-        _id: "1",
-        src: "cat1.jpg"
-      },
-      description: ["Line 1", "Line 2", "Line 3", "Line 4"],
-      verifications: []
-    },
-    {
-      image: {
-        _id: "2",
-        src: "cat2.jpg"
-      },
-      description: ["Line 1", "Line 2", "Line 3", "Line 4"],
-      verifications: []
-    }
-  ]
-};
-
-const steps = mockData.tasks[0].description;
-// const currentStep = steps[i];
-
 class Align extends Component {
   state = {
-    taskIndex: 0,
-    stepIndex: 0,
-    currentColor: "white"
+    currentColor: "white",
+    currentStep: "",
+    taskIdx: 0,
+    tasks: [
+      {
+        image: {
+          _id: "1",
+          src: "cat1.jpg"
+        },
+        description: ["Line 1", "Line 2", "Line 3", "Line 4"],
+        verifications: []
+      },
+      {
+        image: {
+          _id: "2",
+          src: "cat2.jpg"
+        },
+        description: ["Line 1", "Line 2", "Line 3", "Line 4"],
+        verifications: []
+      }
+    ]
   };
-
-  // advancSteps(steps) {
-  //   this.setState(...currentStep);
-  // }
 
   setColor = newColor => {
     this.setState({ currentColor: newColor });
@@ -53,24 +43,23 @@ class Align extends Component {
     // completedTaskWithVerification.verification.push(new verification)
     // taskService.save({ completedTaskWithVerification });
   };
-  showNext() {}
+  showNextLine = () => {
+    debugger;
+    this.setState({
+      currentStep: this.state.tasks[0].description[this.state.taskIdx],
+      taskIdx: this.state.taskIdx + 1
+    });
+  };
   render() {
     return (
       <>
         <StepsContainer>
           <h1>Align The Tiles</h1>
           <Step>
-            {/* {[1, 2, 3].map(i => (
-              <StepElement>{i}</StepElement>
-            ))} */}
-            {[steps].map((step, i) => (
-              <StepElement>{step[i]}</StepElement>
-            ))}
+            <StepElement>{this.currentStep}</StepElement>
             <Separator></Separator>
-            <p>Finished?</p>
-            <p>Click NEXT to get more instructions:</p>
             <ButtonContainer>
-              <ActiveButton onClick={this.showNext}>Next</ActiveButton>
+              <ActiveButton onClick={this.showNextLine}>Next</ActiveButton>
               <InactiveButton>Done</InactiveButton>
             </ButtonContainer>
           </Step>
