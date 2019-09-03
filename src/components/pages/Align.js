@@ -18,7 +18,12 @@ class Align extends Component {
           _id: "1",
           src: "cat1.jpg"
         },
-        description: ["Line 1", "Line 2", "Line 3", "Line 4"],
+        description: [
+          "Line 1 of task 1",
+          "Line 2  1 of task 1",
+          "Line 3  1 of task 1",
+          "Line 4  1 of task 1"
+        ],
         verifications: []
       },
       {
@@ -43,12 +48,12 @@ class Align extends Component {
     // completedTaskWithVerification.verification.push(new verification)
     // taskService.save({ completedTaskWithVerification });
   };
-  showNextLine = () => {
-    debugger;
+  showNextLine = props => {
     this.setState({
       currentStep: this.state.tasks[0].description[this.state.taskIdx],
-      taskIdx: this.state.taskIdx + 1
+      taskIdx: this.taskIdx + 1
     });
+    // alert("current step is: " + this.state.currentStep);
   };
   render() {
     return (
@@ -56,11 +61,11 @@ class Align extends Component {
         <StepsContainer>
           <h1>Align The Tiles</h1>
           <Step>
-            <StepElement>{this.currentStep}</StepElement>
+            <StepElement>{this.state.currentStep}</StepElement>
             <Separator></Separator>
             <ButtonContainer>
-              <ActiveButton onClick={this.showNextLine}>Next</ActiveButton>
-              <InactiveButton>Done</InactiveButton>
+              <NextButton onClick={this.showNextLine}>Next</NextButton>
+              <DoneButton>Done</DoneButton>
             </ButtonContainer>
           </Step>
         </StepsContainer>
@@ -104,11 +109,11 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-around;
 `;
-const ActiveButton = styled(Button)`
+const NextButton = styled(Button)`
   background-color: blue;
   width: 20%;
 `;
-const InactiveButton = styled(Button)`
+const DoneButton = styled(Button)`
   background-color: #aaa;
   width: 20%;
   &:hover {
