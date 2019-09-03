@@ -10,28 +10,34 @@ import Button from "../common/Button";
 class Align extends Component {
   state = {
     currentColor: "white",
-    currentStep: "",
+    currentStep: "Do a thing",
     taskIdx: 0,
+    taskDisplayCompleted: false,
     tasks: [
       {
         image: {
           _id: "1",
-          src: "cat1.jpg"
+          src: "board1.jpg"
         },
         description: [
-          "Line 1 of task 1",
-          "Line 2  1 of task 1",
-          "Line 3  1 of task 1",
-          "Line 4  1 of task 1"
+          // "Line 1 of task 1",
+          "Do a 2nd thing",
+          "Do a 3rd thing",
+          "Do a 4th thing"
         ],
         verifications: []
       },
       {
         image: {
           _id: "2",
-          src: "cat2.jpg"
+          src: "board1.jpg"
         },
-        description: ["Line 1", "Line 2", "Line 3", "Line 4"],
+        description: [
+          "Line 1 of task 2",
+          "Line 2 of task 2",
+          "Line 3 of task 2",
+          "Line 4 of task 2"
+        ],
         verifications: []
       }
     ]
@@ -49,11 +55,16 @@ class Align extends Component {
     // taskService.save({ completedTaskWithVerification });
   };
   showNextLine = props => {
-    this.setState({
-      currentStep: this.state.tasks[0].description[this.state.taskIdx],
-      taskIdx: this.taskIdx + 1
-    });
-    // alert("current step is: " + this.state.currentStep);
+    if (this.state.taskIdx < this.state.tasks[0].description.length) {
+      this.setState({
+        currentStep: this.state.tasks[0].description[this.state.taskIdx],
+        taskIdx: this.state.taskIdx + 1
+      });
+      // alert("current step is: " + this.state.currentStep);
+    } else {
+      this.setState({ taskDisplayCompleted: true });
+      return;
+    }
   };
   render() {
     return (
@@ -64,8 +75,25 @@ class Align extends Component {
             <StepElement>{this.state.currentStep}</StepElement>
             <Separator></Separator>
             <ButtonContainer>
-              <NextButton onClick={this.showNextLine}>Next</NextButton>
-              <DoneButton>Done</DoneButton>
+              <NextButton
+                onClick={this.showNextLine}
+                className={
+                  this.state.taskDisplayCompleted
+                    ? "inactive-btn"
+                    : "active-btn"
+                }
+              >
+                Next
+              </NextButton>
+              <DoneButton
+                className={
+                  this.state.taskDisplayCompleted
+                    ? "active-btn"
+                    : "inactive-btn"
+                }
+              >
+                Done
+              </DoneButton>
             </ButtonContainer>
           </Step>
         </StepsContainer>
@@ -109,16 +137,12 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+
 const NextButton = styled(Button)`
-  background-color: blue;
   width: 20%;
 `;
 const DoneButton = styled(Button)`
-  background-color: #aaa;
   width: 20%;
-  &:hover {
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0);
-  }
 `;
 const Separator = styled.hr`
   margin: 0 1em;

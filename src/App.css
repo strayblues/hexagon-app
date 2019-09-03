@@ -40,7 +40,14 @@ text {
   user-select: none;
 }
 
-/* polygon:hover {
-  fill: red !important;
-  stroke-width: 4;
-} */
+.active-btn {
+  background-color: blue;
+}
+
+.inactive-btn {
+  background-color: #aaa !important;
+}
+
+.inactive-btn:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0) !important;
+}
