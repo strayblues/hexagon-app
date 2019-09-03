@@ -8,6 +8,7 @@ class Hexagon extends Component {
         fill: "white",
         stroke: "black",
         strokeWidth: "2"
+        // shapeRendering: "geometricPrecision"
       },
       isSelected: false,
       isMouseOver: false
@@ -16,7 +17,6 @@ class Hexagon extends Component {
   }
 
   toggleMark = e => {
-    console.log("was clicked!");
     // deselected -> mark and uncolor it
     if (this.state.isMouseOver && this.state.isSelected) {
       this.setState({
@@ -37,7 +37,7 @@ class Hexagon extends Component {
         },
         isSelected: true
       });
-      // selected but not hovered -> keep marked but decolor
+      // selected but not hovered -> keep marked (but decolor?)
     } else if (!this.state.isMouseOver && this.state.isSelected) {
       this.setState({
         hexagonStyle: {
