@@ -3,15 +3,12 @@ import styled from "styled-components";
 import Button from "../common/Button";
 import taskService from "../../services/taskService";
 import { Link } from "react-router-dom";
+import board1 from "../../data/board1.png";
 
 // Components
-// import ElementContainer from "../common/ElementContainer";
-import EmptyBoard from "../EmptyBoard";
 import TextField from "../TextField";
 
 class Describe extends Component {
-  state = {};
-
   componentDidMount() {
     const task = taskService.getEmpty();
     this.setState({ task }); //inputs
@@ -32,7 +29,7 @@ class Describe extends Component {
       <>
         <BoardContainer>
           <h2>Write instructions for painting the tiles</h2>
-          <EmptyBoard currentColor="white" />
+          <TaskImage src={board1} alt={"task"} />
         </BoardContainer>
         <TextFieldContainer>
           <InputContainer>
@@ -68,6 +65,7 @@ const InputContainer = styled(ElementContainer)`
   }
 `;
 const BoardContainer = styled(ElementContainer)``;
+const TaskImage = styled.img``;
 const StyledButton = styled(Button)`
   width: 25%;
   align-self: left;

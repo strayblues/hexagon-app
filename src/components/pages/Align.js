@@ -11,27 +11,28 @@ import Button from "../common/Button";
 class Align extends Component {
   state = {
     currentColor: "white",
-    currentStep: "Do a thing",
+    currentStep:
+      "Starting with the leftmost column paint every other column blue.",
     taskIdx: 0,
     taskDisplayCompleted: false,
     tasks: [
       {
         image: {
           _id: "1",
-          src: "board1.jpg"
+          src: "board1.png"
         },
         description: [
           // "Line 1 of task 1",
-          "Do a 2nd thing",
-          "Do a 3rd thing",
-          "Do a 4th thing"
+          "Paint the remaining columns green.",
+          "Actually that's it...",
+          "Nothing else to do."
         ],
         verifications: []
       },
       {
         image: {
           _id: "2",
-          src: "board1.jpg"
+          src: "board2.png"
         },
         description: [
           "Line 1 of task 2",
