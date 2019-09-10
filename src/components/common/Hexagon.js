@@ -10,13 +10,18 @@ class Hexagon extends Component {
         strokeWidth: "2"
         // shapeRendering: "geometricPrecision"
       },
+      textStyle: {
+        fill: "black"
+      },
       isSelected: false,
       isMouseOver: false
     };
     this.toggleMark = this.toggleMark.bind(this);
+    this.setTextColor = this.setTextColor.bind(this);
   }
 
   toggleMark = e => {
+    this.setTextColor();
     // deselected -> mark and uncolor it
     if (this.state.isMouseOver && this.state.isSelected) {
       this.setState({
@@ -63,6 +68,24 @@ class Hexagon extends Component {
     this.setState({ isMouseOver: false });
   };
 
+  setTextColor = e => {
+    if (this.props.currentColor === "black") {
+      this.setState({
+        textStyle: {
+          ...this.state.textStyle,
+          fill: "white"
+        }
+      });
+    } else {
+      this.setState({
+        textStyle: {
+          ...this.state.textStyle,
+          fill: "black"
+        }
+      });
+    }
+  };
+
   render() {
     return (
       <g
@@ -76,7 +99,13 @@ class Hexagon extends Component {
           points="50,25 100,25 125,68 100,111 50,111 25,68"
           style={this.state.hexagonStyle}
         />
-        <text text-anchor="middle" x="74" y="85" fill="black" font-size="40">
+        <text
+          text-anchor="middle"
+          x="74"
+          y="85"
+          font-size="40"
+          style={this.state.textStyle}
+        >
           {this.props.number}
         </text>
       </g>
