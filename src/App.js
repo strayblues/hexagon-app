@@ -8,9 +8,9 @@ import Describe from "./components/pages/Describe";
 import Align from "./components/pages/Align";
 import AlignDone from "./components/pages/AlignDone";
 import Verify from "./components/pages/Verify";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Navbar from "./components/UI/Navbar";
+import Header from "./components/UI/Header";
+import Footer from "./components/UI/Footer";
 
 const App = () => {
   return (
