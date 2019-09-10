@@ -36,7 +36,7 @@ class Describe extends Component {
             <TextField />
           </InputContainer>
           <StyledButton onClick={this.handleSend}>
-            <RedirectLink to="/align">Send</RedirectLink>
+            <RedirectLink to="/align">Done</RedirectLink>
           </StyledButton>
         </TextFieldContainer>
       </>

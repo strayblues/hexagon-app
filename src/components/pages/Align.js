@@ -95,7 +95,7 @@ class Align extends Component {
                     : "inactive-btn"
                 }
               >
-                <RedirectLink to="/align-done">Send</RedirectLink>
+                <RedirectLink to="/align-done">Done</RedirectLink>
               </DoneButton>
             </ButtonContainer>
           </Step>
