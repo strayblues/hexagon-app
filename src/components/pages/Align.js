@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import taskService from "../../services/taskService";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 // Components
 import NumberedBoard from "../NumberedBoard";
@@ -10,11 +10,13 @@ import Button from "../common/Button";
 
 class Align extends Component {
   state = {
+    hexagonBorder: "5", // Get this prop from child
     currentColor: "white",
     currentStep:
       "Starting with the leftmost column paint every other column blue.",
     taskIdx: 0,
-    taskDisplayCompleted: false,
+    taskDisplayCompleted: false, // TODO: while false should prevent DONE button activity
+    // And when true should prevent Next button activity
     tasks: [
       {
         image: {
@@ -48,6 +50,9 @@ class Align extends Component {
   setColor = newColor => {
     this.setState({ currentColor: newColor });
   };
+  // set setBorder = newBorder => {
+  //   this.setState({ currentBorder: newBorder });
+  // };
   componentDidMount() {
     const taskToVerify = taskService.getCompletedTask();
     this.setState({ taskToVerify }); // "verify" page
@@ -58,9 +63,11 @@ class Align extends Component {
   };
   showNextLine = props => {
     if (this.state.taskIdx < this.state.tasks[0].description.length) {
+      // this.setBorder({ hexagonBorder: 0 });
       this.setState({
         currentStep: this.state.tasks[0].description[this.state.taskIdx],
         taskIdx: this.state.taskIdx + 1
+        // get state of hexagon and change border to 2
       });
       // alert("current step is: " + this.state.currentStep);
     } else {
@@ -88,14 +95,15 @@ class Align extends Component {
                 Next
               </NextButton>
               <DoneButton
-                onClick={this.handleDone}
+                onClick={this.handleDone} // TODO: create function and decide what it does.
+                // Should it make RedirectLink conditional?
                 className={
                   this.state.taskDisplayCompleted
                     ? "active-btn"
                     : "inactive-btn"
                 }
               >
-                <RedirectLink to="/align-done">Done</RedirectLink>
+                <RedirectLink to="align-done">Done</RedirectLink>
               </DoneButton>
             </ButtonContainer>
           </Step>
@@ -106,6 +114,8 @@ class Align extends Component {
             currentColor={this.state.currentColor}
           />
           <NumberedBoard
+            passHexagonBorderToParent={this.setBorder}
+            borderColor={this.state.currentBorder}
             currentColor={this.state.currentColor} // Pass color to Board
           />
         </BoardContainer>
@@ -164,5 +174,5 @@ const DoneButton = styled(Button)`
   width: 20%;
 `;
 const Separator = styled.hr`
-  margin: 0 1em;
+  margin: 1.5em 1em;
 `;

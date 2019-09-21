@@ -49,6 +49,21 @@ class AlignDone extends Component {
     window.close();
   };
 
+  handleCopy = () => {
+    /* Get the text field */
+    let copyText = document.getElementById("myInput");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    alert("Copied the text: " + copyText.value);
+  };
+
   render() {
     return (
       <Containter>
@@ -56,9 +71,13 @@ class AlignDone extends Component {
           <h2>Good job! You're almost done.</h2>
           <h2>Please copy your results and paste them in the MTurk screen.</h2>
         </Instructions>
+        {/* <CopyToClipboard text={this.state.response}>
+           <p className="copy-clipboard">Copy to clipboard</p>
+        </CopyToClipboard> */}
+        <CopyButton onClick={this.handleCopy}>Copy</CopyButton>
         <DataToCopy>
-          text in json format that the user can copy&paste (and cut?), but not
-          edit
+          text in json format that the user can copy to clipbord. Prevent other
+          actions like Edit.
         </DataToCopy>
         <CloseButton onClick={this.handleClose}>Close</CloseButton>
       </Containter>
@@ -91,4 +110,9 @@ const CloseButton = styled(Button)`
   color: white;
   width: 20%;
   background-color: orange;
+`;
+
+const CopyButton = styled(CloseButton)`
+  margin: 2em 0;
+  background-color: blue;
 `;
