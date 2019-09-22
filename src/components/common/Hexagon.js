@@ -96,14 +96,14 @@ class Hexagon extends Component {
       >
         <polygon
           id="hexagon"
-          points="50,25 100,25 125,68 100,111 50,111 25,68"
+          points="60,70 90,50 120,70 120,100 90,120 60,100"
           style={this.state.hexagonStyle}
         />
         <text
           text-anchor="middle"
-          x="74"
-          y="85"
-          font-size="40"
+          x="90"
+          y="93"
+          font-size="25"
           style={this.state.textStyle}
         >
           {this.props.number}
@@ -114,7 +114,3 @@ class Hexagon extends Component {
 }
 
 export default Hexagon;
-
-// const Number = styled.p`
-//   font-size: 8px;
-// `;

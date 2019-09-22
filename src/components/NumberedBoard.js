@@ -11,21 +11,21 @@ class EmptyBoard extends Component {
   render() {
     return (
       <Container>
-        <svg viewBox="0 0 1350 950">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i => {
-            return [0, 2, 4, 6, 8, 10, 12, 14].map(j => {
+        <svg viewBox="0 0 1080 750">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map(i => {
+            return [0, 1, 2, 3].map(j => {
               return (
                 <>
                   <Hexagon
-                    number={10 * j + i + 1}
+                    number={i + j * 32 + 1}
                     currentColor={this.props.currentColor}
-                    transform={"translate(" + j * 75 + "," + i * 86 + ")"}
+                    transform={"translate(" + 60 * i + "," + 100 * j + ")"}
                   />
                   <Hexagon
-                    number={10 * j + i + 11}
+                    number={i + j * 32 + 17}
                     currentColor={this.props.currentColor}
                     transform={
-                      "translate(" + (j + 1) * 75 + "," + (i * 86 + 43) + ")"
+                      "translate(" + (60 * i + 30) + "," + (j * 100 + 50) + ")"
                     }
                   />
                 </>
@@ -41,5 +41,5 @@ class EmptyBoard extends Component {
 export default EmptyBoard;
 
 const Container = styled.div`
-  margin-left: 2em;
+  margin-left: -1em;
 `;
