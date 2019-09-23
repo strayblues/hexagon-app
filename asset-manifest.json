@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/hexagon-app/build/static/css/main.69fee84f.chunk.css",
-    "main.js": "/hexagon-app/build/static/js/main.82c59521.chunk.js",
-    "main.js.map": "/hexagon-app/build/static/js/main.82c59521.chunk.js.map",
-    "runtime~main.js": "/hexagon-app/build/static/js/runtime~main.8be10e70.js",
-    "runtime~main.js.map": "/hexagon-app/build/static/js/runtime~main.8be10e70.js.map",
-    "static/js/2.a1c6c66a.chunk.js": "/hexagon-app/build/static/js/2.a1c6c66a.chunk.js",
-    "static/js/2.a1c6c66a.chunk.js.map": "/hexagon-app/build/static/js/2.a1c6c66a.chunk.js.map",
-    "index.html": "/hexagon-app/build/index.html",
-    "precache-manifest.10e8b029bea23d21fc8d849a6bd4977e.js": "/hexagon-app/build/precache-manifest.10e8b029bea23d21fc8d849a6bd4977e.js",
-    "service-worker.js": "/hexagon-app/build/service-worker.js",
-    "static/css/main.69fee84f.chunk.css.map": "/hexagon-app/build/static/css/main.69fee84f.chunk.css.map",
-    "static/media/board1.png": "/hexagon-app/build/static/media/board1.9bd064ed.png"
+    "main.css": "/hexagon-app/build/index.html/static/css/main.69fee84f.chunk.css",
+    "main.js": "/hexagon-app/build/index.html/static/js/main.c97f5cff.chunk.js",
+    "main.js.map": "/hexagon-app/build/index.html/static/js/main.c97f5cff.chunk.js.map",
+    "runtime~main.js": "/hexagon-app/build/index.html/static/js/runtime~main.d6ec42c9.js",
+    "runtime~main.js.map": "/hexagon-app/build/index.html/static/js/runtime~main.d6ec42c9.js.map",
+    "static/js/2.11cdd2f6.chunk.js": "/hexagon-app/build/index.html/static/js/2.11cdd2f6.chunk.js",
+    "static/js/2.11cdd2f6.chunk.js.map": "/hexagon-app/build/index.html/static/js/2.11cdd2f6.chunk.js.map",
+    "index.html": "/hexagon-app/build/index.html/index.html",
+    "precache-manifest.fc1ca87d8fd54c5c226e622582df8c4c.js": "/hexagon-app/build/index.html/precache-manifest.fc1ca87d8fd54c5c226e622582df8c4c.js",
+    "service-worker.js": "/hexagon-app/build/index.html/service-worker.js",
+    "static/css/main.69fee84f.chunk.css.map": "/hexagon-app/build/index.html/static/css/main.69fee84f.chunk.css.map",
+    "static/media/board1.png": "/hexagon-app/build/index.html/static/media/board1.9bd064ed.png"
   }
 }
