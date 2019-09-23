@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "951569e1fed9d37957d1b35db9c8df49",
+    "revision": "029a9f86157571faedfd076e877e345b",
     "url": "/hexagon-app/index.html"
   },
   {
-    "revision": "a7e58bccfaa42381fb9f",
+    "revision": "f2e52b03c7b88879e7af",
     "url": "/hexagon-app/static/css/main.69fee84f.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hexagon-app/static/js/2.1812dbc7.chunk.js"
   },
   {
-    "revision": "a7e58bccfaa42381fb9f",
-    "url": "/hexagon-app/static/js/main.32dcbfb6.chunk.js"
+    "revision": "f2e52b03c7b88879e7af",
+    "url": "/hexagon-app/static/js/main.6c5980e2.chunk.js"
   },
   {
     "revision": "80323d81d337004cb467",
